@@ -179,7 +179,7 @@ function About() {
               <p>
                 My master's thesis tackled deterministic classification of Git commits using fine-tuned DistilBERT 
                 for enterprise tax compliance workflows. At FAU, I also built scalable GitHub data ingestion 
-                pipelines with PySpark and Delta Lake. Earlier, at TCS, I optimised large-scale ETL 
+                pipelines with PySpark and Delta Lake. Earlier, at TCS, I optimised enterprise ETL 
                 pipelines and built analytics dashboards for pharmaceutical clients.
               </p>
               <p>
@@ -189,9 +189,9 @@ function About() {
             </div>
             <div className="about-highlights">
               {[
-                {  title: 'NLP & Transformers', desc: 'Fine-tuning BERT-family models for classification, RAG pipelines and semantic search.' },
                 { title: 'Research-oriented', desc: 'Rigorous experimentation, benchmarking, hyperparameter tuning and reproducibility.' },
                 { title: 'Pipeline Builder', desc: 'End-to-end ML pipelines from raw data ingestion to modular, production-grade deployment.' },
+                {  title: 'NLP & Transformers', desc: 'Fine-tuning BERT-family models for classification, RAG pipelines and semantic search.' },
                 { title: 'Always learning', desc: 'Currently deepening German language skills and exploring Ethical AI applications.' },
               ].map(h => (
                 <div className="highlight-card" key={h.title}>
