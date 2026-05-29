@@ -1,6 +1,11 @@
 import { useState, useEffect, useRef } from 'react'
 import './index.css'
 import myphoto from '/myphoto.jpg' 
+import myphoto2 from '/myphoto2.jpg'
+
+import gnostic from '/projects/naghammdi.png'
+import bert from '/projects/bert.jpg'
+import deeplab from '/projects/deeplabv3.jpg'
 
 // ─── DATA ───────────────────────────────────────────────
 const skills = [
@@ -24,7 +29,7 @@ const skills = [
 
 const projects = [
   {
-    emoji: '📚',
+    img: gnostic,
     color: 'linear-gradient(135deg, #ddd8ea, #d0cae0)',
     tag: 'Full Stack · RAG · LLM',
     title: 'Gnostic Library',
@@ -32,7 +37,7 @@ const projects = [
     links: [{ label: 'Live Demo', href: 'https://the-naghammadi-library.onrender.com/' }],
   },
   {
-    emoji: '🗂️',
+    img: bert,
     color: 'linear-gradient(135deg, #d8e8f0, #c8dce8)',
     tag: 'NLP · Transformers · MLOps',
     title: 'Git Commit Classifier',
@@ -40,7 +45,7 @@ const projects = [
     links: [{ label: 'GitHub', href: 'https://github.com/anubhavsingh1729/dempe-classification' }],
   },
   {
-    emoji: '🛣️',
+    img: deeplab,
     color: 'linear-gradient(135deg, #d4ddd0, #c8d8c4)',
     tag: 'Computer Vision · Accessibility',
     title: 'Road Scene Understanding',
@@ -149,8 +154,7 @@ function Hero() {
         </div>
         <div className="hero-image-area">
           <div className="hero-avatar" style={{ position: 'relative' }}>
-            AS
-            {/* <img src={myphoto} alt="Anubhav Singh" className="hero-avatar-img" />  */}
+            <img src={myphoto2} alt="Anubhav Singh" className="hero-avatar-img" /> 
             <div className="hero-stats">
             </div>
           </div>
@@ -208,6 +212,42 @@ function About() {
   )
 }
 
+
+function Projects() {
+  return (
+    <section id="projects">
+      <div className="section-inner">
+        <FadeSection>
+          <p className="section-label">Projects</p>
+          <h2 className="section-title">Things I've <em>built</em></h2>
+        </FadeSection>
+        <FadeSection>
+          <div className="projects-grid">
+            {projects.map(p => (
+              <div className="project-card" key={p.title}>
+                <div className="project-thumb">
+                  <img src = {p.img} className='project-thumb-img' />
+                </div>
+                <div className="project-body">
+                  <span className="project-tag">{p.tag}</span>
+                  <h3>{p.title}</h3>
+                  <p>{p.desc}</p>
+                  <div className="project-links">
+                    {p.links.map(l => (
+                      <a key={l.label} href={l.href} className="project-link">{l.label} ↗</a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </FadeSection>
+      </div>
+    </section>
+  )
+}
+
+
 function Skills() {
   return (
     <section id="skills">
@@ -223,40 +263,6 @@ function Skills() {
                 <h3>{s.category}</h3>
                 <div className="skill-tags">
                   {s.tags.map(t => <span className="skill-tag" key={t}>{t}</span>)}
-                </div>
-              </div>
-            ))}
-          </div>
-        </FadeSection>
-      </div>
-    </section>
-  )
-}
-
-function Projects() {
-  return (
-    <section id="projects">
-      <div className="section-inner">
-        <FadeSection>
-          <p className="section-label">Projects</p>
-          <h2 className="section-title">Things I've <em>built</em></h2>
-        </FadeSection>
-        <FadeSection>
-          <div className="projects-grid">
-            {projects.map(p => (
-              <div className="project-card" key={p.title}>
-                <div className="project-thumb" style={{ background: p.color }}>
-                  {p.emoji}
-                </div>
-                <div className="project-body">
-                  <span className="project-tag">{p.tag}</span>
-                  <h3>{p.title}</h3>
-                  <p>{p.desc}</p>
-                  <div className="project-links">
-                    {p.links.map(l => (
-                      <a key={l.label} href={l.href} className="project-link">{l.label} ↗</a>
-                    ))}
-                  </div>
                 </div>
               </div>
             ))}
@@ -362,8 +368,8 @@ export default function App() {
       <Navbar />
       <Hero />
       <About />
-      <Skills />
       <Projects />
+      <Skills />
       <Experience />
       <Contact />
       <Footer />
