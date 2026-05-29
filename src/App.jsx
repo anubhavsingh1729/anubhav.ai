@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import './index.css'
-import myphoto from '/myphoto.jpg' 
-import myphoto2 from '/myphoto2.jpg'
+import myphoto from '/myphoto.jpg'
 
 import gnostic from '/projects/naghammdi.png'
 import bert from '/projects/bert.jpg'
@@ -154,7 +153,7 @@ function Hero() {
         </div>
         <div className="hero-image-area">
           <div className="hero-avatar" style={{ position: 'relative' }}>
-            <img src={myphoto2} alt="Anubhav Singh" className="hero-avatar-img" /> 
+            <img src={myphoto} alt="Anubhav Singh" className="hero-avatar-img" /> 
             <div className="hero-stats">
             </div>
           </div>
